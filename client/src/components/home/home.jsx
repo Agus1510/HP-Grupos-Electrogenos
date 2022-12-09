@@ -20,7 +20,7 @@ function Home() {
             <span></span>
           </div>
         </div>
-        <video autoPlay="true" loop="true" muted={true}>
+        <video autoPlay={true} loop={true} muted={true}>
           <source src="timelapse.mp4" type="video/mp4" />
         </video>
       </div>

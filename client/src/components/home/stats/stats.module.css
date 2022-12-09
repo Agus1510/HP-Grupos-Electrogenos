@@ -45,6 +45,20 @@ gap: 15em;
     background-color: rgb(255, 255, 255);
 }
 
+@media (max-width: 896px) {
+    .container{
+        height: 40vh;
+    }
+
+    .flexContainer{
+        height: 100%;
+        gap: 5em;
+    }
+    .text h1{
+        font-size: 3em;
+    }
+}
+
 @media (max-width: 768px) {
     .container{
         height: 40vh;

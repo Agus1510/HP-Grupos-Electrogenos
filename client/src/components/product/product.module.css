@@ -45,6 +45,15 @@
     height: 30em;
     margin-left: 3em;
 }
+@media (max-width: 896px){
+    .flexContainer{
+        width: 90%;
+    }
+    .description img{
+        width: 15em;
+        height: 15em;
+    }
+}
 
 @media (max-width: 768px){
     .description{

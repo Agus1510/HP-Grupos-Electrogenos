@@ -48,9 +48,9 @@ function Contacto() {
         <span></span>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.7190766172607!2d-58.17636338434091!3d-34.8883999803867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2d9c44e133235%3A0x384b6f984baec0a6!2sHP%20Grupos%20Electr%C3%B3genos!5e0!3m2!1ses!2sus!4v1669234405106!5m2!1ses!2sus"
-          width="600"
+          width="800"
           height="450"
-          allowfullscreen=""
+          allowFullScreen={true}
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
