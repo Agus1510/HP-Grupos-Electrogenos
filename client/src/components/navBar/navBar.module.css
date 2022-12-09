@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap');
+*{font-family: 'Cairo', sans-serif;}
+.flexContainer{
+    background-color: rgb(34, 45, 57);
+    width: 100vw;
+    height: 100%;
+}
+
+.logoContainer{
+    display: flex;
+    width: 14.5em;
+    height: 100%;
+    background-color: rgb(240, 209, 56);
+    align-items: center;
+    flex-direction:row ;
+    color: black;
+    font-size: 1.4em;
+    font-weight: 400;
+    gap: 1em;
+    float: left;
+}
+
+.logoContainer img{
+    width: 3em;
+    height: 2em;
+    margin-left: 2em;
+    cursor: pointer;
+}
+
+.buttonsContainer{
+    display: flex;
+    justify-self: end;
+    align-items: center;
+    width:42em;
+    height: 100%;
+    float: right;
+    gap: 2em;
+    justify-content: center;
+}
+
+.buttonsContainer button , .buttonsContainer a{
+    display: flex;
+    position: relative;
+    height: 3em;
+    font-size: .82em;
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    align-items: center;
+}
+
+.buttonsContainer button:hover , .buttonsContainer a:hover{
+    color:rgb(240, 209, 56);
+}
+
+.buttonsContainer button:focus , .buttonsContainer a:focus{
+    outline:none;
+}
+
+.buttonsPhone{
+    display: none;
+    pointer-events: none;
+}
+
+.phoneMenu, .menuIcon{
+    display: none;
+    pointer-events: none;
+}
+
+.dropdown button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdownmenu{
+    display: inline-flex;
+    flex-direction: column;
+    position: absolute;
+    top: calc(100%) ;
+    background-color: rgb(54, 54, 54);
+    border-radius: 0em 0em 0em 0em;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.36);
+    opacity: 0;
+    text-align: center;
+    width: 100%;
+    transform: translateY(-10px);
+    transition: opacity 250ms ease-in-out, transform 250ms ease-in-out;
+    pointer-events: none; 
+    z-index: 20;
+  }
+  
+  .dropdownmenu a{
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: rgb(221, 221, 221);
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid;
+    border-color: rgb(86, 86, 86);
+    padding-top: 0.3em;
+  }
+  
+  
+  .dropdownmenuActive{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    border-radius: 0em 0em 0em 0em;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.36);
+    opacity: 1;
+    text-align: center;
+    width: 100%;
+    transform: translateY(0);
+    pointer-events: auto; 
+    transition: opacity 250ms ease-in-out, transform 250ms ease-in-out;
+  }
+  
+  .dropdownmenuActive a{
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: rgb(221, 221, 221);
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid;
+    border-color: rgb(86, 86, 86);
+    padding-top: 0.3em;
+  }
+
+
+@media (max-width: 768px) {
+    .flexContainer{
+        display: flex;
+        align-items: center;
+    }
+    .buttonsContainer{
+      display: none;
+      pointer-events: none;
+    }
+
+    .phoneMenuActive{
+      display: flex;
+      position: absolute;
+      left: 0;
+      pointer-events: auto;
+
+  }
+
+  .buttonsPhoneActive{
+    display: flex;
+    position: relative;
+    width: 50%;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.logoContainer{
+    width:50%;
+    font-size: 1em;
+}
+
+.logoContainer img{
+  width: 3em;
+  height: 2em;
+}
+.dropdownmenuActive{
+  display: flex;
+  position: fixed;
+  width: 50%;
+  height: 100vh;
+  right: 0;
+
+}
+.menuIcon{
+    display: flex;
+    position: absolute;
+    pointer-events: auto;
+    width: 2em;
+    height: 2em;
+    right: 2em;
+  }
+.container{
+  position: absolute;
+  z-index: 0;
+}
+.social{
+  width: 17em;
+  margin-right: 1.2em;
+}
+}

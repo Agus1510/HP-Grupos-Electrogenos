@@ -1,0 +1,145 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 92vw;
+}
+.grid {
+    width: 80%;
+    min-height: 80em;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-auto-rows: 15em;
+    row-gap: 12em;
+    margin-bottom: 10em;
+    
+}
+.productContainer{
+    display: flex;
+    width: 70%;
+    min-height: 15em;
+    margin-top: 4em;
+    justify-content: center;
+    margin-left: 5em;
+    margin-right: 5em;
+
+}
+
+.productContainer img{
+    width: 70%;
+    height: 23em;
+    transition: opacity .1s;
+}
+
+.description {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    line-height: 0em;
+    font-size: 1.3em;
+    margin-left: 0.5em;
+    margin-top: 6.7em;
+    opacity: 0;
+    text-align: center;
+    transition: opacity .1s;
+
+}
+
+.description p{
+    color: black;
+}
+
+.productContainer img:hover{
+    opacity: 0.4;
+    transition: opacity .5s;
+}
+
+.productContainer:hover .description{
+    opacity: 1;
+    transition: opacity .5s;
+}
+
+
+.buttons{
+    position: absolute;
+    display: flex;
+    align-self: center;
+    gap:18em;
+}
+
+.notButtons{
+    display: none;
+    pointer-events: none;
+}
+
+.buttons button{
+    background: none;
+    font-size: 2em;
+    border: none;
+    cursor: pointer;
+}
+
+.category2{
+    display: flex;
+    flex-direction: column;
+    width: 30em;
+    height: 40em;
+    border-radius: 1em;
+}
+.img2 img{
+    display: flex;
+    width: 30em;
+    height: 30em;
+    border-top-left-radius: 2em;
+    border-top-right-radius: 2em;
+    border: 1px solid black;
+    border-bottom: none;
+}
+.name2{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 20%;
+    align-items: center;
+    justify-content: center;
+    background-color: #cfcfcf;
+    border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 2em;
+    border: 1px solid black;
+    border-top: none;
+}
+ .name2 h1{
+    font-size: 1.6em;
+    margin-top: 1em !important;
+    color: #fffff6;
+    }
+    .name2 h2{
+    font-size: 1.4em;
+    color: #fffff6;
+    margin-top: 0;
+    }
+
+
+@media (max-width: 768px) {
+    .grid {
+        width: 90%;
+        grid-template-columns: repeat(2, 50%);
+        grid-auto-rows: 15em;
+        gap: 2em;
+        min-height: 50em;
+    }
+    
+    .productContainer{
+        margin-left: 0em;
+
+    }
+
+    .productContainer img{
+        width: 15em;
+        height: 10em;
+        transition: opacity .1s;
+    }
+    .buttons{
+        gap:8em;
+    }
+}

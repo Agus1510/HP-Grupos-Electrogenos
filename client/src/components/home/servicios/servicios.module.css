@@ -1,0 +1,129 @@
+.container{
+    width: 100%;
+    min-height: 95vh;
+    background-color: whitesmoke;
+    position: relative;
+    z-index: 5;
+
+}
+
+.flexContainer{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 0em;
+    z-index: 5;
+
+}
+
+.flexContainer h1{
+    color: rgb(134, 134, 134);
+    font-size: 4.3rem;
+    letter-spacing: 5px;
+    line-height: 15px;
+    margin-top: 2.5em;
+}
+
+.flexContainer span{
+    width: 10em;
+    height: .8em;
+    background-color: rgb(240, 209, 56);
+}
+
+.categorias{
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    height: 80%;
+    justify-content: space-around;
+    gap: 5em
+}
+
+.servicio{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 30%;
+    height: 37em;
+    align-items: center;
+}
+
+.servicio img{
+    height: 14em;
+    width: 20em;
+}
+
+.servicio button, .servicio a{
+    display: flex;
+    position: absolute;
+    border-radius: 0;
+    bottom: 0 !important;
+    outline: none;
+    background-color: rgb(36, 36, 36);
+    height: 3em;
+    color: white;
+    min-width: 13em;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.servicio button:hover, .servicio a:hover{
+    color: rgb(240, 209, 56); 
+    outline: none;
+}
+
+.servicioText{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 10em;
+    color: rgb(38, 67, 99);
+    background-color: rgb(236, 236, 236);
+    padding: 1em 1em 2em 2em;
+    word-break: normal;
+}
+
+.servicioText h3{
+    font-size: 1.5rem;
+    line-height: 1em;
+}
+
+.servicioText h4{
+    font-size: 1em;
+    line-height: 0em;
+}
+
+.servicioText p{
+    line-height: 1.5em;
+    margin-top: 0 !important;
+}
+
+@media (max-width: 768px) {
+    .container{
+        padding-bottom: 2em;
+    }
+    .categorias{
+        flex-direction: column;
+        width: 90%;
+        align-items: center;
+        padding-top: 2em;
+    }
+    .servicioText{
+        min-width: 20em;
+    }
+
+    .servicioText h4{
+        line-height: 1em;
+    }
+    .servicio{
+        height: 39em;
+        width: 90%;
+    }
+    .servicio img{
+        width: 60%;
+        height: 15em;
+    }
+}
