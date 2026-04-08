@@ -12,7 +12,7 @@ const morgan = require("morgan");
 
 // config
 const app = express();
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 4000;
 const db = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/taller";
 
 app.use(cors());

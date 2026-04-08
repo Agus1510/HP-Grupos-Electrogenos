@@ -9,7 +9,7 @@ import axios from "axios";
 import "./index.css";
 
 axios.defaults.baseURL =
-  import.meta.env.VITE_BACK_ROUTE || "http://localhost:3001/";
+  import.meta.env.VITE_BACK_ROUTE || "http://localhost:4000/";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Provider store={store}>
