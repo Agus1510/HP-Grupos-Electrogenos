@@ -1,17 +1,22 @@
 *{
   scroll-behavior:smooth ;
 }
-.app{
-  width: 100vw;
+.App{
+  width: 100%;
   min-height: 100vh;
 }
 
 .navBar{
   display: flex;
   position: fixed;
-  height: 7em;
-  width: 100vw;
+  height: 6.5rem;
+  width: 100%;
   top: 0;
-  z-index: 6;
+  left: 0;
+  z-index: 10;
 }
 
+.pages,
+.page{
+  width: 100%;
+}

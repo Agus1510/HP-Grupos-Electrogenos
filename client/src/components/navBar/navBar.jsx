@@ -2,37 +2,45 @@ import React from "react";
 import style from "./navBar.module.css";
 import { HashLink as Link } from "react-router-hash-link";
 import PhoneMenu from "../phoneMenu/phoneMenu";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoMenu } from "react-icons/io5";
-import { useEffect } from "react";
+
 function NavBar() {
   const [activePhone, setActivePhone] = useState(false);
+
   useEffect(() => {
-    document.addEventListener("click", (e) => {
-      const isDropdownPhone = e.target.matches("[data-dropdown-phone]");
-      if (!isDropdownPhone && e.target.closest("[data-dropdownPhone]") != null)
-        return;
-      let currentDropdown;
+    const handleDocumentClick = (e) => {
+      const isDropdownPhone = e.target.closest("[data-dropdown-phone]");
+
       if (isDropdownPhone) {
-        setActivePhone(!activePhone);
-      }
-      if (!isDropdownPhone) {
+        setActivePhone((currentState) => !currentState);
+      } else {
         setActivePhone(false);
       }
-    });
+    };
+
+    document.addEventListener("click", handleDocumentClick);
+
+    return () => {
+      document.removeEventListener("click", handleDocumentClick);
+    };
   }, []);
+
   return (
     <div className={style.flexContainer}>
       <div className={style.logoContainer}>
         <img src="logo.webp" />
-        <p>Grupos Electrógenos</p>
+        <p>Grupos Electrogenos</p>
       </div>
       <div className={activePhone ? style.phoneMenuActive : style.phoneMenu}>
-        <PhoneMenu data-dropdownPhone />
+        <PhoneMenu />
       </div>
       <div className={style.buttonsContainer}>
         <a href="/">INICIO</a>
-        <a href="https://www.tienda.hpelectrogenos.com/" target="_blank">
+        <a
+          href="https://www.tienda.hpelectrogenos.com/"
+          target="_blank"
+          rel="noreferrer">
           TIENDA
         </a>
         <Link to={"/#servicios"}>SERVICIOS</Link>

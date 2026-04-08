@@ -1,91 +1,138 @@
 .container{
     width: 100%;
-    height: 115vh;
     background-color:rgb(235, 235, 235);
     position: relative;
     z-index: 5;
-
 }
 
 .flexContainer{
     display: flex;
-    height: 100%;
     width: 100%;
     flex-direction: column;
     align-items: center;
-    gap: 0em;
+    gap: 1.5rem;
     z-index: 5;
-
+    margin: 0 auto;
+    padding: clamp(4rem, 6vw, 5.5rem) 1.5rem clamp(4rem, 6vw, 5rem);
+    max-width: 1200px;
 }
-.flexContainer h1{
+
+.title{
     color: rgb(134, 134, 134);
-    font-size: 3.5rem;
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
     letter-spacing: 5px;
-    line-height: 15px;
-    margin-top: 2.5em;
+    line-height: 1;
+    margin: 0;
+    text-align: center;
 }
 
-.flexContainer span{
-    width: 10em;
+.divider{
+    width: min(10rem, 35vw);
     height: .8em;
     background-color: rgb(240, 209, 56);
 }
 
-.flexContainer iframe{
-    margin-top: 5em;
+.mapFrame{
     border: 0;
-    width: 70%;
+    width: 100%;
+    min-height: clamp(260px, 42vw, 450px);
 }
 
 .contact{
-    display: flex;
-    flex-direction: row;
-    width: 50%;
-    justify-content: space-between;
-    margin-top: 2em;
-}
-
-.contact h1{
-    font-weight: 300;
-    font-size: 2em;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    width: 100%;
+    gap: clamp(2rem, 4vw, 5rem);
+    align-items: start;
 }
 
 .text{
-    width: 25em;
+    width: auto;
+    min-width: 0;
     color: black;
-    margin-bottom: 5em;
+}
+
+.text h1{
+    font-weight: 300;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    line-height: 1.05;
+    margin: 0 0 1rem;
+}
+
+.text p,
+.text a{
+    margin: 0 0 1.25rem;
+    color:black;
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+}
+
+.text a{
+    display: inline-block;
 }
 
 .form {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+}
+
+.form input:not([type=submit]),
+.form textarea{
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1px solid #bcbcbc;
+    background-color: white;
+    color: #202020;
+}
+
+.form textarea{
+    min-height: 10rem;
+    resize: vertical;
 }
 
 .form input[type=submit]{
-    margin-top: 2em;
-    width: 6em;
-    align-self: flex-end;
+    margin-top: 1rem;
+    width: fit-content;
+    min-width: 8rem;
+    align-self: flex-start;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    background-color: #4a4a4a;
+    color: white;
 }
 
+.form input[type=submit]:hover{
+    background-color: #2f2f2f;
+}
 
-@media (max-width: 896px) {
-    .container{
-        min-height: 90em;
-    }
+@media (max-width: 960px) {
     .contact{
-        width: 90%;
-        flex-direction: column;
+        grid-template-columns: 1fr;
     }
+
+    .mapFrame{
+        min-height: 320px;
+    }
+}
+
+@media (max-width: 640px) {
+    .flexContainer{
+        padding-inline: 1rem;
+    }
+
     .text{
-        width: 100%;
-        text-align: center;
+        text-align: left;
     }
 
     .form input[type=submit]{
-        align-self: center;
+        align-self: stretch;
+        width: 100%;
     }
-    .flexContainer iframe{
-        margin-top: 3em;
-        border: 0;
-        width: 70%;
-    }}
+
+    .mapFrame{
+        min-height: 260px;
+    }
+}

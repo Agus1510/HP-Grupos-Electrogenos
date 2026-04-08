@@ -42,8 +42,23 @@ function Product() {
     return null;
   }
 
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: product.about,
+    image: [product.image[0].data_url],
+    brand: {
+      "@type": "Organization",
+      name: "HP Grupos Electrogenos",
+    },
+  };
+
   return (
     <div className={style.container}>
+      <script type="application/ld+json">
+        {JSON.stringify(productSchema)}
+      </script>
       <div className={style.flexContainer}>
         <h1>{product.name}</h1>
         <span></span>

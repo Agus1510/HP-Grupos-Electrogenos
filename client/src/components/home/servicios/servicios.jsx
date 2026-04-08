@@ -9,7 +9,7 @@ function Servicios() {
         <span></span>
         <div className={style.categorias}>
           <div className={style.servicio}>
-            <img src="grupo1.webp" />
+            <img src="grupo1.webp" alt="grupo1" />
             <div className={style.servicioText}>
               <h3>Venta</h3>
               <h4>HP Grupo Electrógeno Diesel Gama Insonorizado:</h4>
@@ -23,7 +23,7 @@ function Servicios() {
             </a>
           </div>
           <div className={style.servicio}>
-            <img src="grupo2.webp" />
+            <img src="grupo2.webp" alt="grupo2" />
             <div className={style.servicioText}>
               <h3>Alquiler</h3>
               <p>
@@ -36,7 +36,7 @@ function Servicios() {
             <a href="#contacto"> CONSULTAR</a>
           </div>
           <div className={style.servicio}>
-            <img src="service.png" />
+            <img src="service.png" alt="service" />
             <div className={style.servicioText}>
               <h3>Reparación</h3>
               <p>

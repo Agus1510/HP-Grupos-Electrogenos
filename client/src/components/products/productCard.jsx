@@ -63,7 +63,7 @@ function ProductCard({ products }) {
       {user.isAdmin ? (
         <div className={style.category2} onClick={() => handleAdd()}>
           <div className={style.img2}>
-            <img src={"plus.png"} />
+            <img src={"plus.png"} alt="plus" />
           </div>
           <div className={style.name2}>
             <h1>Agregar producto</h1>

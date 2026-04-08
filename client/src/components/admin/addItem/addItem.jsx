@@ -130,7 +130,7 @@ function AddItem() {
                 <button onClick={onImageRemoveAll}>Remove all images</button>
                 {imageList.map((image, index) => (
                   <div key={index} className="image-item">
-                    <img src={image["data_url"]} alt="" width="100" />
+                    <img src={image["data_url"]} alt="imagen" width="100" />
                     <div className="image-item__btn-wrapper">
                       <button onClick={() => onImageUpdate(index)}>
                         Update

@@ -1,60 +1,76 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap');
-*{font-family: 'Cairo', sans-serif;}
+
+*{
+    font-family: 'Cairo', sans-serif;
+}
+
 .flexContainer{
     background-color: rgb(34, 45, 57);
-    width: 100vw;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 100%;
     height: 100%;
 }
 
 .logoContainer{
     display: flex;
-    width: 14.5em;
+    min-width: 21rem;
     height: 100%;
     background-color: rgb(240, 209, 56);
     align-items: center;
-    flex-direction:row ;
+    flex-direction: row;
     color: black;
-    font-size: 1.4em;
+    font-size: 1.2rem;
     font-weight: 400;
-    gap: 1em;
-    float: left;
+    gap: 1rem;
+    padding: 0 2rem;
+    flex-shrink: 0;
 }
 
 .logoContainer img{
     width: 3em;
     height: 2em;
-    margin-left: 2em;
     cursor: pointer;
+}
+
+.logoContainer p{
+    margin: 0;
+    line-height: 1.1;
 }
 
 .buttonsContainer{
     display: flex;
-    justify-self: end;
     align-items: center;
-    width:42em;
+    justify-content: flex-end;
+    flex: 1 1 auto;
+    min-width: 0;
     height: 100%;
-    float: right;
-    gap: 2em;
-    justify-content: center;
+    gap: clamp(1rem, 2vw, 2rem);
+    padding: 0 2rem;
 }
 
-.buttonsContainer button , .buttonsContainer a{
+.buttonsContainer button,
+.buttonsContainer a{
     display: flex;
-    position: relative;
-    height: 3em;
-    font-size: .82em;
+    align-items: center;
+    height: 100%;
+    font-size: 0.85rem;
     background: none;
     color: white;
     border: none;
     cursor: pointer;
-    align-items: center;
+    white-space: nowrap;
+    letter-spacing: 0.02em;
 }
 
-.buttonsContainer button:hover , .buttonsContainer a:hover{
+.buttonsContainer button:hover,
+.buttonsContainer a:hover{
     color:rgb(240, 209, 56);
 }
 
-.buttonsContainer button:focus , .buttonsContainer a:focus{
+.buttonsContainer button:focus,
+.buttonsContainer a:focus{
     outline:none;
 }
 
@@ -63,7 +79,9 @@
     pointer-events: none;
 }
 
-.phoneMenu, .menuIcon{
+.phoneMenu,
+.phoneMenuActive,
+.menuIcon{
     display: none;
     pointer-events: none;
 }
@@ -79,7 +97,7 @@
     display: inline-flex;
     flex-direction: column;
     position: absolute;
-    top: calc(100%) ;
+    top: calc(100%);
     background-color: rgb(54, 54, 54);
     border-radius: 0em 0em 0em 0em;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.36);
@@ -88,11 +106,11 @@
     width: 100%;
     transform: translateY(-10px);
     transition: opacity 250ms ease-in-out, transform 250ms ease-in-out;
-    pointer-events: none; 
+    pointer-events: none;
     z-index: 20;
-  }
-  
-  .dropdownmenu a{
+}
+
+.dropdownmenu a{
     font-size: 1.2rem;
     text-decoration: none;
     color: rgb(221, 221, 221);
@@ -100,10 +118,9 @@
     border-bottom: 1px solid;
     border-color: rgb(86, 86, 86);
     padding-top: 0.3em;
-  }
-  
-  
-  .dropdownmenuActive{
+}
+
+.dropdownmenuActive{
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -113,11 +130,11 @@
     text-align: center;
     width: 100%;
     transform: translateY(0);
-    pointer-events: auto; 
+    pointer-events: auto;
     transition: opacity 250ms ease-in-out, transform 250ms ease-in-out;
-  }
-  
-  .dropdownmenuActive a{
+}
+
+.dropdownmenuActive a{
     font-size: 1.2rem;
     text-decoration: none;
     color: rgb(221, 221, 221);
@@ -125,66 +142,55 @@
     border-bottom: 1px solid;
     border-color: rgb(86, 86, 86);
     padding-top: 0.3em;
-  }
+}
 
-
-@media (max-width: 896px) {
+@media (max-width: 1180px) {
     .flexContainer{
         display: flex;
         align-items: center;
     }
+
     .buttonsContainer{
       display: none;
       pointer-events: none;
     }
 
     .phoneMenuActive{
-      display: flex;
-      position: absolute;
-      left: 0;
+      display: block;
       pointer-events: auto;
+    }
 
-  }
+    .logoContainer{
+        min-width: 0;
+        width: auto;
+        padding: 0 1.5rem;
+        font-size: 1rem;
+    }
 
-  .buttonsPhoneActive{
-    display: flex;
-    position: relative;
-    width: 50%;
-    height: 100vh;
-    flex-direction: column;
+    .menuIcon{
+        display: flex;
+        pointer-events: auto;
+        width: 2.25rem;
+        height: 2.25rem;
+        margin-right: 1.5rem;
+        color: white;
+        flex-shrink: 0;
+    }
 }
 
-.logoContainer{
-    width:50%;
-    font-size: 1em;
-}
+@media (max-width: 640px) {
+    .logoContainer{
+        padding: 0 1rem;
+        gap: 0.75rem;
+        font-size: 0.92rem;
+    }
 
-.logoContainer img{
-  width: 3em;
-  height: 2em;
-}
-.dropdownmenuActive{
-  display: flex;
-  position: fixed;
-  width: 50%;
-  height: 100vh;
-  right: 0;
+    .logoContainer img{
+        width: 2.75rem;
+        height: auto;
+    }
 
-}
-.menuIcon{
-    display: flex;
-    position: absolute;
-    pointer-events: auto;
-    width: 2em;
-    height: 2em;
-    right: 2em;
-  }
-.container{
-  position: absolute;
-  z-index: 0;
-}
-.social{
-  width: 17em;
-  margin-right: 1.2em;
-}
+    .menuIcon{
+        margin-right: 1rem;
+    }
 }

@@ -13,7 +13,7 @@ function CreatedBy() {
       </div>
       <div className={style.text2}>
         <p>
-          Copyright {<AiOutlineCopyrightCircle />} 2023 HP Grupos electrógenos.
+          Copyright {<AiOutlineCopyrightCircle />} 2025 HP Grupos electrógenos.
           All Rights Reserved
         </p>
       </div>

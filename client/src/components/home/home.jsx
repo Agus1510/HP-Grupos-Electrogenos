@@ -6,6 +6,7 @@ import Nosotros from "./nosotros/nosotros";
 import Productos from "./productos/productos";
 import Servicios from "./servicios/servicios";
 import Stats from "./stats/stats";
+import { Helmet } from "react-helmet";
 
 function Home() {
   return (

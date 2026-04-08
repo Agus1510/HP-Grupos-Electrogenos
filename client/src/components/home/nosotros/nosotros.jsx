@@ -25,7 +25,7 @@ function Nosotros() {
           </p>
         </div>
       </div>
-      <img src="grupo3.jpg" />
+      <img src="grupo3.jpg" alt="grupo3" />
     </div>
   );
 }
