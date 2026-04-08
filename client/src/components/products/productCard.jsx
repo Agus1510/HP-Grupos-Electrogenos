@@ -1,20 +1,17 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import style from "./productCard.module.css";
-import { useState } from "react";
-import Link from "@tiptap/extension-link";
-import { EditorContent, useEditor } from "@tiptap/react";
-import StarterKit from "@tiptap/starter-kit";
 import { useSelector, useDispatch } from "react-redux";
 import { setAddProduct } from "../../../redux/reducer/index";
 import { useNavigate } from "react-router-dom";
-import { deleteProduct, getProductsByName } from "../../../redux/actions";
-import AddProduct from "./popUp/addProduct";
+import { getProductsByName } from "../../../redux/actions";
+
+const AddProduct = lazy(() => import("./popUp/addProduct"));
 
 function ProductCard({ products }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { user, addProduct } = useSelector((state) => state.reducerCompleto);
-  const token = useSelector((state) => state.reducerCompleto.authToken);
+
   const handleAdd = () => {
     dispatch(setAddProduct(true));
   };
@@ -22,6 +19,7 @@ function ProductCard({ products }) {
   const move = async (name) => {
     const dis = await dispatch(getProductsByName(name));
     const data = dis.payload;
+
     if (data.success) {
       navigate(`/producto/${name}`);
     }
@@ -37,16 +35,14 @@ function ProductCard({ products }) {
             <div key={product._id}>
               <div
                 className={style.productContainer}
-                onClick={() => move(product.name)}
-              >
+                onClick={() => move(product.name)}>
                 <div className={style.description}>
                   <p>{product.name}</p>
                 </div>
                 <div
                   className={
                     product.image.length > 1 ? style.buttons : style.notButtons
-                  }
-                >
+                  }>
                   <button value={"<"} onClick={(e) => handleClick(e, product)}>
                     {"<"}
                   </button>
@@ -70,7 +66,11 @@ function ProductCard({ products }) {
           </div>
         </div>
       ) : null}
-      {addProduct ? <AddProduct /> : null}
+      {addProduct ? (
+        <Suspense fallback={null}>
+          <AddProduct />
+        </Suspense>
+      ) : null}
     </div>
   );
 }

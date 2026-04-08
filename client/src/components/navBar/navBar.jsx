@@ -37,12 +37,7 @@ function NavBar() {
       </div>
       <div className={style.buttonsContainer}>
         <a href="/">INICIO</a>
-        <a
-          href="https://www.tienda.hpelectrogenos.com/"
-          target="_blank"
-          rel="noreferrer">
-          TIENDA
-        </a>
+
         <Link to={"/#servicios"}>SERVICIOS</Link>
         <Link to={"/#nosotros"}>NOSOTROS</Link>
         <Link to={"/#productos"}>OTROS PRODUCTOS</Link>

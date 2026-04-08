@@ -1,65 +1,65 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
+import React, { Suspense, lazy } from "react";
 import "./App.css";
 import NavBar from "./components/navBar/navBar";
-import Home from "./components/home/home";
-import { Route, Routes, useLocation } from "react-router-dom";
-import Login from "./components/login/login";
-import Register from "./components/register/register";
-import Logout from "./components/logout/logout";
-import Product from "./components/product/product";
+import { Route, Routes } from "react-router-dom";
+
+const Home = lazy(() => import("./components/home/home"));
+const Login = lazy(() => import("./components/login/login"));
+const Register = lazy(() => import("./components/register/register"));
+const Logout = lazy(() => import("./components/logout/logout"));
+const Product = lazy(() => import("./components/product/product"));
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="App">
       <div className="navBar">
         <NavBar />
       </div>
       <div className="pages">
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <div className="page">
-                <Home />
-              </div>
-            }
-          />
-          <Route
-            path="/login"
-            element={
-              <div className="page">
-                <Login />
-              </div>
-            }
-          />
-          <Route
-            path="/logout"
-            element={
-              <div className="page">
-                <Logout />
-              </div>
-            }
-          />
-          <Route
-            path="/register"
-            element={
-              <div className="page">
-                <Register />
-              </div>
-            }
-          />
-          <Route
-            path="/producto/:name"
-            element={
-              <div className="page">
-                <Product />
-              </div>
-            }
-          />
-        </Routes>
+        <Suspense fallback={<div className="page"></div>}>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <div className="page">
+                  <Home />
+                </div>
+              }
+            />
+            <Route
+              path="/login"
+              element={
+                <div className="page">
+                  <Login />
+                </div>
+              }
+            />
+            <Route
+              path="/logout"
+              element={
+                <div className="page">
+                  <Logout />
+                </div>
+              }
+            />
+            <Route
+              path="/register"
+              element={
+                <div className="page">
+                  <Register />
+                </div>
+              }
+            />
+            <Route
+              path="/producto/:name"
+              element={
+                <div className="page">
+                  <Product />
+                </div>
+              }
+            />
+          </Routes>
+        </Suspense>
       </div>
     </div>
   );
